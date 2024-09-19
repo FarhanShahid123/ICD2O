@@ -1,0 +1,14 @@
+class Testing {
+  public static void main(String [] args) {
+    double circ;
+    double rad = 3.0; // the radius
+    // Math.PI is Java's stored constant for π
+    circ = 2 * Math.PI * rad; // the circumference
+    /*
+     * Print out the circumference with the sentence
+     * "The circumference of a circle of radius 3.0
+     * is circ", using the variable circ.
+     */
+     System.out.println("The circumference of a circle of radius 3.0");
+  }
+}
