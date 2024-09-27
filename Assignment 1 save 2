@@ -1,0 +1,33 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication2;
+import java.lang.Math;
+import java.util.Scanner;
+/**
+ *
+ * @author 787462
+ */
+public class JavaApplication2 {
+
+    /**8
+     *
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+    int length;
+    int width;
+    Scanner sc = new Scanner (System.in);
+    System.out.println("Length is");
+    width = sc.nextInt();
+    System.out.println("Width is");
+    length = sc.nextInt();
+    System.out.println(length * width);
+    System.out.println ("This is the area");
+    
+    int.radius;
+    int diameter;
+    System.out.println("radius is");
+    radius = sc.next 
