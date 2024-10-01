@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication4;
+package javaapplication6;
 import java.lang.Math;
 import java.util.Scanner;
 /**
  *
  * @author 787462
  */
-public class JavaApplication4 {
+public class JavaApplication6 {
 
     /**8
      *
@@ -20,22 +20,22 @@ public class JavaApplication4 {
         int length;
         int width;
         Scanner sc = new Scanner (System.in);
-        System.out.print("Length is");
+        System.out.println("Length is");
         width = sc.nextInt();
-        System.out.print("Width is");
+        System.out.println ("Width is");
         length = sc.nextInt();
         System.out.println ("This is the area");
         System.out.println(length * width);
 
         double radius;
-        System.out.print("whats the radius ");
+        System.out.println("whats the radius ");
         radius = sc.nextDouble();
         System.out.println (Math.PI*(radius*radius));
         int height;    
         double Radius;
-        System.out.print ("Whats the height ");
+        System.out.println ("Whats the height ");
         height = sc.nextInt ();
-        System.out.print ("whats the radius ");
+        System.out.println ("whats the radius ");
         Radius = sc.nextInt ();
         System.out.println (Math.PI*(radius*radius)*height);
         int L;
@@ -43,7 +43,7 @@ public class JavaApplication4 {
         G = 9.8;
         System.out.print("input meters: ");
         L = sc.nextInt();
-        System.out.print((Math.PI*Math.PI)Math.sqrt(L/G));
+        System.out.println((Math.PI*Math.PI)*Math.sqrt(L/G));
                 
     }
 }
