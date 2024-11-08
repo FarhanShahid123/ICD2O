@@ -1,0 +1,22 @@
+// any import statements go here!
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+       
+        int maxTemp = 70;
+int minTemp = 20;
+int temperature = 33;
+if (temperature >= maxTemp) {
+   System.out.println("Porridge too hot!");
+}
+if (temperature <= minTemp) {
+   System.out.println("Porridge too cold!");
+}
+if ((temperature < maxTemp) && (temperature > minTemp)) {
+   System.out.println("Porridge just right!");
+}
+        
+        // Yout code stops here!
+    }
+}
