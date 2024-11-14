@@ -1,0 +1,11 @@
+class marks {
+   public static void main(String [] args) {
+     Scanner kb = new scanner (System.in)
+     system.out.print  "What is your percentage mark?"
+     int mark = 
+     
+     
+      // enter your code here!
+      
+   }
+}
