@@ -2,23 +2,22 @@ import java.util.Scanner;
   
   public class marks {
    public static void main(String[] args) {
-     Scanner scan = new Scanner (System.in);
+    Scanner scan = new Scanner (System.in);
     System.out.print("Please enter a percentage mark: ");
    int marks = scan.nextInt();
     if (marks >= 0 && marks <= 100) {
     if (marks >= 80) {
     System.out.println(marks + " is a letter grade of A.");
     } else if (marks >= 70) {
-      System.out.println(marks + " is a letter grade of B.");
+    System.out.println(marks + " is a letter grade of B.");
     } else if (marks >= 60) {
-        System.out.println(marks + " is a letter grade of C.");
+   System.out.println(marks + " is a letter grade of C.");
    } else if (marks >= 50) {
-      System.out.println(marks + " is a letter grade of D.");
-     } else {
-      System.out.println(marks + " is a letter grade of F.");
-        }
-          } else {
-              System.out.println("Invalid percentage! Please enter a value between 0 and 100.");
-          }
-      }
+    System.out.println(marks + " is a letter grade of D.");
+    } else {
+    System.out.println(marks + " is a letter grade of F.");
+    }
+    } else {
+    }
+     }
 }
