@@ -20,11 +20,23 @@ public class Assignment2 {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner sc = new Scanner (System.in);
-        System.out.println ("Please enter an integer.");
+        System.out.println ("Please enter an whole number.");
         int n = sc.nextInt ();
-        System.out.println (n);
-        
-        
-    }
-    
+        // System.out.println (n);
+        int terms =1;
+        int highestNumber = n;
+        while (n != 1)
+        if (n % 2==0 ) {
+          n = n / 2;
+    } else {
+    n= 3*n + 1;
 }
+        if (n > highestNumber) {
+            highestNumber = n;
+        }
+        System.out.printf("%,d); ",n);
+    }//while
+    System.out.print(" do another (y/n? "); 
+            
+            
+        }
