@@ -1,42 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package assignment.pkg2;
 
 import java.util.Scanner;
 
-/**
- *
- * @author 787462
- */
 public class Assignment2 {
-    
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-        Scanner sc = new Scanner (System.in);
-        System.out.println ("Please enter an whole number.");
-        int n = sc.nextInt ();
-        // System.out.println (n);
-        int terms =1;
-        int highestNumber = n;
-        while (n != 1)
-        if (n % 2==0 ) {
-          n = n / 2;
-    } else {
-    n= 3*n + 1;
-}
-        if (n > highestNumber) {
-            highestNumber = n;
-        }
-        System.out.printf("%,d); ",n);
-    }//while
-    System.out.print(" do another (y/n? "); 
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Please enter a whole number.");
+        int n = sc.nextInt();
+
+        int highestNumber = n; // Initialize highestNumber with the input number
+        int terms = 1; // Variable to count the number of terms in the sequence
+
+        // Collatz sequence logic
+        while (n != 1) {
+            if (n % 2 == 0) {
+                n = n / 2; // If n is even
+            } else {
+                n = 3 * n + 1; // If n is odd
+            }
+
+            // Check if the new n is greater than highestNumber
+            if (n > highestNumber) {
+                highestNumber = n;
+            }//while
+            System.out.println ("Another (y/n)?");
+            String another = sc.next(). toLowerCase();
             
+        } 
+           
             
-        }
+    } 
