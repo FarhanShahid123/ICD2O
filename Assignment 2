@@ -1,34 +1,34 @@
 package assignment.pkg2;
 
-import java.util.Scanner;
+import java.util.Scanner;  // Import Scanner to get user input
 
 public class Assignment2 {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);  // Create Scanner to read input
+        String another;  // Variable to check if the user wants to try again
 
-        System.out.println("Please enter a whole number.");
-        int n = sc.nextInt();
+        do {
+            System.out.println("Please enter a whole number.");  // Ask user for a number
+            int n = sc.nextInt();  // Get the number from the user
 
-        int highestNumber = n; // Initialize highestNumber with the input number
-        int terms = 1; // Variable to count the number of terms in the sequence
-
-        // Collatz sequence logic
-        while (n != 1) {
-            if (n % 2 == 0) {
-                n = n / 2; // If n is even
-            } else {
-                n = 3 * n + 1; // If n is odd
+            // Start the Collatz sequence
+            while (n != 1) {  // Keep going until n is 1
+                System.out.print(n + ", ");  // Print the current number
+                if (n % 2 == 0) {  // If the number is even
+                    n = n / 2;  // Divide it by 2
+                } else {  // If the number is odd
+                    n = 3 * n + 1;  // Multiply by 3 and add 1
+                }
             }
+            System.out.println("1");  // Print 1 at the end
 
-            // Check if the new n is greater than highestNumber
-            if (n > highestNumber) {
-                highestNumber = n;
-            }//while
-            System.out.println ("Another (y/n)?");
-            String another = sc.next(). toLowerCase();
-            
-        } 
-           
-            
-    } 
+            // Ask if the user wants to do another number
+            System.out.println("Another (y/n)?");  // Ask user to try again
+            another = sc.next().toLowerCase();  // Get the user's answer
+        } while (another.equals("y"));  // If user says "y", do it again
+
+        System.out.println("Goodbye!");  // Say goodbye when done
+        sc.close();  // Close the scanner
+    }
+}
