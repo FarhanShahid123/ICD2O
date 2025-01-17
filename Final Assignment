@@ -1,1 +1,36 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplicationfinalassignment;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ *
+ * @author 787462
+ */
+public class JavaApplicationFinalAssignment {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws FileNotFoundException {
+        String fileName = "C:\Users\787462\Documents\NetBeansProjects\JavaApplicationFinalAssignment\src\javaapplicationfinalassignment\ledger (2).dat";
+       try {
+          
+       }
+      Scanner fh = new Scanner(new File(fileName));
+      
+
+        // TODO code application logic here
+        
+    
+       
+       }
+    
+}
 
