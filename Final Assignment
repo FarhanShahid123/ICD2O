@@ -1,36 +1,73 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package javaapplicationfinalassignment;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
-/**
- *
- * @author 787462
- */
-public class JavaApplicationFinalAssignment {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) throws FileNotFoundException {
-        String fileName = "C:\Users\787462\Documents\NetBeansProjects\JavaApplicationFinalAssignment\src\javaapplicationfinalassignment\ledger (2).dat";
-       try {
-          
-       }
-      Scanner fh = new Scanner(new File(fileName));
-      
-
-        // TODO code application logic here
-        
-    
-       
-       }
-    
+import java.io.*;
+import java.util.*;
+public class AssignmentFinal {
+    // Function to calculate the final balance
+    public static double finalBalance(double startingBalance, double purchase, double payment) {
+        // Monthly interest rate of 0.28 per year compounded monthly
+        double interestRate = 0.28 / 12; // 0.28 / 12
+        // Formula to calculate the final balance
+        double balance = (1 + interestRate) * startingBalance - payment + purchase;
+        return balance;
+    }
+    public static void main(String[] args) {
+        String fileName = "ledger.dat"; // 
+        List<String[]> customerData = new ArrayList<>(); // List to hold customer data
+        double totalBalance = 0; // To keep track of the sum of all final balances
+        double highestBalance = Double.MIN_VALUE; // To track the highest balance
+        double lowestBalance = Double.MAX_VALUE; // To track the lowest balance
+        String highestAccount = ""; // To store the account with the highest balance
+        String lowestAccount = ""; // To store the account with the lowest balance
+        int customerCount = 0; // To count the number of customers
+        try {
+            // Open the file for reading
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            String line;
+            // Read each line of the file
+            while ((line = reader.readLine()) != null) {
+                customerCount++;
+                // Split the line by commas into an array
+                String[] data = line.split(",");
+                String accountNumber = data[2]; // Account number is at index 2
+                double startingBalance = Double.parseDouble(data[3]); // Starting balance at index 3
+                double purchase = Double.parseDouble(data[4]); // Purchase at index 4
+                double payment = Double.parseDouble(data[5]); // Payment at index 5
+                // Calculate the final balance using the formula
+                double finalBal = finalBalance(startingBalance, purchase, payment);
+                // Store the account and final balance
+                customerData.add(new String[]{accountNumber, String.format("%.2f", finalBal)});
+                // Add this final balance to the total balance
+                totalBalance += finalBal;
+                // Check if this is the highest balance
+                if (finalBal > highestBalance) {
+                    highestBalance = finalBal;
+                    highestAccount = accountNumber;
+                }
+                // Check if this is the lowest balance
+                if (finalBal < lowestBalance) {
+                    lowestBalance = finalBal;
+                    lowestAccount = accountNumber;
+                }
+            }
+            // Close the file reader
+            reader.close();
+        } catch (IOException e) {
+            System.out.println("Error reading the file: " + e.getMessage());
+        }
+        // Display the final balances for all customers
+        System.out.println("Account Number and Final Balance:");
+        for (String[] customer : customerData) {
+            System.out.println("Account: " + customer[0] + ", Final Balance: $" + customer[1]);
+        }
+        // Calculate the average balance
+        double averageBalance = totalBalance / customerCount;
+        // Display the highest, lowest, and average balances
+        System.out.println("\nHighest Balance: Account " + highestAccount + " - $" + highestBalance);
+        System.out.println("Lowest Balance: Account " + lowestAccount + " - $" + lowestBalance);
+        System.out.println("Average Balance: $" + String.format("%.2f", averageBalance));
+    }
 }
+
+
+
+
 
